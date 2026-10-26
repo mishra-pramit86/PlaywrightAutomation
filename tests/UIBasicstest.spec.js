@@ -43,9 +43,9 @@ test.only('Handle new tab', async ({browser})=> {
     await page.goto('https://saucelabs.com/')
     const newPagePromise = context.waitForEvent('page');
     await page.locator('.announcement-arrow-right').click();
-    const newPage2 = await newPagePromise;
-    await newPage2.waitForLoadState('domcontentloaded');
-    console.log('New tab URL', newPage2.url());
+    const newPage = await newPagePromise;
+    await newPage.waitForLoadState('domcontentloaded');
+    console.log('New tab URL', newPage.url());
 
 
 })
