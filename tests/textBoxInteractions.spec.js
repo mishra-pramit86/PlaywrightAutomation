@@ -12,7 +12,7 @@ test('Keyboard Interactions', async({page})=> {
     console.log(await userName.inputValue());
     const passField = page.locator('#password')
     await passField.fill('secret_sauce')
-    //expect(passField).toBe('secret_sauce');
+    //expect(passField).toBe('secret_sauce');               
     //This throws error as toBe compares object to string as toBe compares strict equality
     await expect(passField).toHaveValue('secret_sauce');
     await expect(passField).toBeEditable();
